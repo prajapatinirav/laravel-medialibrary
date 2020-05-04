@@ -113,8 +113,8 @@ class FileManipulator
 
         File::copy($imageFile, $conversionTempFile);
 
-        if(!$conversion->performManuplation){
-            return $imageFile;
+        if(!$conversion->getPerformManuplation()){
+            return $conversionTempFile;
         }
 
         $supportedFormats = ['jpg', 'pjpg', 'png', 'gif'];

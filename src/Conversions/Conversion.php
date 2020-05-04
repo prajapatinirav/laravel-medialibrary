@@ -253,4 +253,8 @@ class Conversion
     {
         return $this->pdfPageNumber;
     }
+
+    public function getPerformManuplation(): bool{
+        return $this->performManuplation;
+    }
 }
