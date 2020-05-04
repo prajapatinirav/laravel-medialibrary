@@ -113,6 +113,10 @@ class FileManipulator
 
         File::copy($imageFile, $conversionTempFile);
 
+        if(!$conversion->performManuplation){
+            return $imageFile;
+        }
+
         $supportedFormats = ['jpg', 'pjpg', 'png', 'gif'];
         if ($conversion->shouldKeepOriginalImageFormat() && in_array($media->extension, $supportedFormats)) {
             $conversion->format($media->extension);

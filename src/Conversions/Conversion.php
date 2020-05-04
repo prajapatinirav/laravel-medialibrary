@@ -29,6 +29,8 @@ class Conversion
 
     protected int $pdfPageNumber = 1;
 
+    protected bool $performManuplation = true;
+
     public function __construct(string $name)
     {
         $this->name = $name;
@@ -177,6 +179,13 @@ class Conversion
     public function nonOptimized(): self
     {
         $this->removeManipulation('optimize');
+
+        return $this;
+    }
+
+    public function nonManuplation(): self
+    {
+        $this->performManuplation = false;
 
         return $this;
     }
