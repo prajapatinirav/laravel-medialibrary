@@ -210,7 +210,7 @@ class Conversion
     public function getResultExtension(string $originalFileExtension = ''): string
     {
         if ($this->shouldKeepOriginalImageFormat()) {
-            if (in_array($originalFileExtension, ['jpg', 'jpeg', 'pjpg', 'png', 'gif'])) {
+            if (in_array($originalFileExtension, ['jpg', 'jpeg', 'pjpg', 'png', 'gif','mp4'])) {
                 return $originalFileExtension;
             }
         }
